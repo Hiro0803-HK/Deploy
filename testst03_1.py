@@ -10,10 +10,13 @@ import streamlit as st
 from PIL import Image
 #import time
 
+Mimage = Image.open('micloset.png')
+
 st.set_page_config(
     page_title="MICLOSET", 
     layout="centered", 
-    #initial_sidebar_state="collapsed", 
+    #initial_sidebar_state="collapsed",
+    page_icon=Mimage,
     menu_items={
          'About': """
          #### ※諸注意※
@@ -33,7 +36,7 @@ st.set_page_config(
          色々試してみても良いでしょう。少しでも興味が沸いたら是非とも
          貴方のファッションスタイルの参考にしてみてください。
          
-         1ページ目：貴方の基本情報を入力(コロナ禍ということでマスクも追加してみました。)  
+         1ページ目：貴方の基本情報を入力&emsp;(コロナ禍ということでマスクも追加してみました。)  
            
          2ページ目：貴方の好きなトップス、ボトムスを入力  
            
