@@ -10,7 +10,7 @@ import streamlit as st
 from PIL import Image
 #import time
 
-st.image(Image.open('micloset.png'))
+st.image(Image.open('For-Deploy/micloset.png'))
 
 PAGE = st.sidebar.selectbox(
     "ページ選択", ["ページ1", "ページ2","ページ3"], 
@@ -501,10 +501,10 @@ def page3():
             with Col03[cnt]:
                 
                 try:
-                    image = Image.open(f'{IMGNAME[0]}/{IMGLIST01[i]}.png')
+                    image = Image.open(f'For-Deploy/{IMGNAME[0]}/{IMGLIST01[i]}.png')
                     st.image(image, caption=IMGLIST01[i])
                 except FileNotFoundError:
-                    EMP = Image.open(f'{IMGNAME[0]}/{IMGNAME[0]}_empty.png')
+                    EMP = Image.open(f'For-Deploy/{IMGNAME[0]}/{IMGNAME[0]}_empty.png')
                     st.image(EMP, caption=IMGLIST01[i])
                 
             cnt = cnt + 1
@@ -613,10 +613,10 @@ def page3():
             with Col04[cnt]:
 
                try:
-                    image = Image.open(f'{IMGNAME[1]}/{IMGLIST02[i]}.png')
+                    image = Image.open(f'For-Deploy/{IMGNAME[1]}/{IMGLIST02[i]}.png')
                     st.image(image, caption=IMGLIST02[i])
                except FileNotFoundError:
-                    EMP = Image.open(f'{IMGNAME[1]}/{IMGNAME[1]}_empty.png')
+                    EMP = Image.open(f'For-Deploy/{IMGNAME[1]}/{IMGNAME[1]}_empty.png')
                     st.image(EMP, caption=IMGLIST02[i])
                  
             cnt = cnt + 1
@@ -630,7 +630,7 @@ def page3():
     with st.sidebar:
         mask = st.session_state["Ymk"]
 
-        st.image(Image.open(f'マスク/{mask}.png'), caption=f'あなたが選んだマスクの色：{mask}' , width=200)
+        st.image(Image.open(f'For-Deploy/マスク/{mask}.png'), caption=f'あなたが選んだマスクの色：{mask}' , width=200)
         #if mask == "白":
         #    imagem = Image.open('白.png')
         #    st.image(imagem,width=250)
