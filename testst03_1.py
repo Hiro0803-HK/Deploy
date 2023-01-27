@@ -427,8 +427,12 @@ def page2():
         st.button(label = "次へ", on_click = next_page)
     except KeyError:
 
+            def change_page():
+            
+                st.session_state["page-select"] = "ページ1"
+
             warning("1ページ目まで戻って再入力して下さい")
-        
+            st.button(label = "戻る", on_click = change_page)
 def page3():
             
     def change_page():
