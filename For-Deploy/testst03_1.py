@@ -282,15 +282,15 @@ def page1():
        wegets("あなたの体型は？")
        col1,col2,col3 = st.columns(3)     
        with col1:
-           image = Image.open('For-Deploy/ほっそり.png')
+           image = Image.open('ほっそり.png')
            st.image(image,width=75)
            
        with col2:
-           image = Image.open('For-Deploy/標準.png')
+           image = Image.open('標準.png')
            st.image(image,width=82)
      
        with col3:
-           image = Image.open('For-Deploy/がっちり.png')
+           image = Image.open('がっちり.png')
            st.image(image,width=100)
 
         
