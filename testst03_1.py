@@ -351,81 +351,83 @@ def page1():
       
 def page2():
 
+    try:
+        st.session_state["ytl"] = st.session_state["ytl"]
+        st.session_state["ybc"] = st.session_state["ybc"]
+        st.session_state["yhs"] = st.session_state["yhs"]
+        st.session_state["ysz"] = st.session_state["ysz"]
+        st.session_state["Ymk"] = st.session_state["Ymk"]
+        
     
-     st.session_state["ytl"] = st.session_state["ytl"]
-     st.session_state["ybc"] = st.session_state["ybc"]
-     st.session_state["yhs"] = st.session_state["yhs"]
-     st.session_state["ysz"] = st.session_state["ysz"]
-     st.session_state["Ymk"] = st.session_state["Ymk"]
-     
-   
-     def change_page():
-        
-         st.session_state["page-select"] = "ページ1"
+        def change_page():
             
-     def next_page():
-        
-         st.session_state["page-select"] = "ページ3"
+            st.session_state["page-select"] = "ページ1"
+                
+        def next_page():
+            
+            st.session_state["page-select"] = "ページ3"
 
-     with colp2_01:
+        with colp2_01:
 
+                st.empty()
+                
+        with colp2_02:
+                wegets("あなたの好きなトップスは")
+                st.multiselect("　", wear01, key="Lwear01")
+
+                YLW = st.session_state["Lwear01"]
+
+        with colp2_03:
+
+                st.empty()
+        try:
+
+            i = 0
+            cnt = 0
+            while(True):
+
+                with Col01[cnt]:
+                    st.write(YLW[i])
+                
+                cnt = cnt + 1
+                i = i + 1
+                if cnt > 2:
+                    cnt = 0
+
+        except IndexError:
+                st.empty()
+                
+        with colp4_01:
+                st.empty()
+
+        with colp4_02:
+                wegets("あなたの好きなボトムスは")
+                st.multiselect("　", wear02, key="Lwear02")
+                
+                YLP = st.session_state["Lwear02"]
+        with colp4_03:
+                st.empty()
+        try:
+            i = 0
+            cnt = 0
+            while(True):
+
+                with Col02[cnt]:
+                    st.write(YLP[i])
+                
+                cnt = cnt + 1
+                i = i + 1
+                if cnt > 2:
+                    cnt = 0
+
+        except IndexError:
             st.empty()
-            
-     with colp2_02:
-            wegets("あなたの好きなトップスは")
-            st.multiselect("　", wear01, key="Lwear01")
 
-            YLW = st.session_state["Lwear01"]
+        st.button(label = "戻る", on_click = change_page)
+        st.button(label = "次へ", on_click = next_page)
+    except KeyError:
 
-     with colp2_03:
-
-            st.empty()
-     try:
-
-         i = 0
-         cnt = 0
-         while(True):
-
-            with Col01[cnt]:
-                st.write(YLW[i])
-            
-            cnt = cnt + 1
-            i = i + 1
-            if cnt > 2:
-                cnt = 0
-
-     except IndexError:
-            st.empty()
-            
-     with colp4_01:
-            st.empty()
-
-     with colp4_02:
-            wegets("あなたの好きなボトムスは")
-            st.multiselect("　", wear02, key="Lwear02")
-            
-            YLP = st.session_state["Lwear02"]
-     with colp4_03:
-            st.empty()
-     try:
-         i = 0
-         cnt = 0
-         while(True):
-
-            with Col02[cnt]:
-                st.write(YLP[i])
-            
-            cnt = cnt + 1
-            i = i + 1
-            if cnt > 2:
-                cnt = 0
-
-     except IndexError:
-        st.empty()
-
-     st.button(label = "戻る", on_click = change_page)
-     st.button(label = "次へ", on_click = next_page)
-
+            warning("1ページ目まで戻って再入力して下さい")
         
 def page3():
             
