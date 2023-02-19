@@ -673,25 +673,6 @@ def page3():
         mask = st.session_state["Ymk"]
 
         st.image(Image.open(f'マスク/{mask}.png'), caption=f'あなたが選んだマスクの色：{mask}' , width=200)
-        #if mask == "白":
-        #    imagem = Image.open('白.png')
-        #    st.image(imagem,width=250)
-        #elif mask == "黒":
-        #    imagem = Image.open('黒.png')
-        #    st.image(imagem,width=250)
-        #elif mask == "グレー":
-        #    imagem = Image.open('グレー.png')
-        #    st.image(imagem,width=250)
-        #elif mask == "ベージュ":
-        #    imagem = Image.open('ベージュ.png')
-        #    st.image(imagem,width=250)
-        #elif mask == "ピンク":
-        #    imagem = Image.open('ピンク.png')
-        #    st.image(imagem,width=250)   
-        #elif mask == "緑":
-        #    imagem = Image.open('緑.png')
-        #    st.image(imagem,width=250)
-         
          
     st.button(label = "戻る", on_click = change_page)
 
